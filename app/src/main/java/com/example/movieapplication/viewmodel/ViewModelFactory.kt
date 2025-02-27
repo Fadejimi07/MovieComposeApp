@@ -10,6 +10,6 @@ class ViewModelFactory(private val movieRepository: MovieRepository) : ViewModel
             @Suppress("UNCHECKED_CAST")
             return MovieViewModel(movieRepository = movieRepository) as T
         }
-        throw IllegalArgumentException("ViewModel cannot be created")
+        throw IllegalArgumentException("Unknown View model class")
     }
 }
