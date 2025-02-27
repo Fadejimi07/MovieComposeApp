@@ -82,6 +82,7 @@ dependencies {
 
     // Jetpack Coil
     implementation(libs.coil.compose)
+    implementation(libs.coil.network.okhttp)
 
     // ViewModel utilities for Compose
     implementation(libs.androidx.lifecycle.viewmodel.compose)

@@ -9,4 +9,6 @@ data class Movie(
     val title: String,
     @SerializedName("overview")
     val body: String,
-)
+) {
+    val imageUrl = "https://image.tmdb.org/t/p/w500/$movieImg"
+}
