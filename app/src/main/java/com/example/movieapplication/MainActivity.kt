@@ -20,7 +20,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        val viewModelFactory = ViewModelFactory(MovieRepository())
+        val viewModelFactory = ViewModelFactory(MovieRepository(context = this))
         val viewModel = ViewModelProvider(this, viewModelFactory)[MovieViewModel::class.java]
         setContent {
             MovieApplicationTheme {
