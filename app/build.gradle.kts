@@ -63,6 +63,7 @@ dependencies {
 
     //retrofit converter
     implementation(libs.google.gson)
+    implementation(libs.converter.gson)
 
     // Room
     implementation(libs.androidx.room.runtime)
