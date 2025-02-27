@@ -8,4 +8,6 @@ class MovieRepository {
     suspend fun getPopularMoviesFroOnlineApi(apiKey: String): List<Movie> {
         return RetrofitInstance.api.getPopularMovies(apiKey).results
     }
+
+    // Fetching data
 }
