@@ -7,4 +7,6 @@ data class Movie(
     @SerializedName("poster_path")
     val movieImg: String,
     val title: String,
+    @SerializedName("overview")
+    val body: String,
 )
