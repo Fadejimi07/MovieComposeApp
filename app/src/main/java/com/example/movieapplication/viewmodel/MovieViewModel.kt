@@ -17,9 +17,13 @@ class MovieViewModel(val movieRepository: MovieRepository) : ViewModel() {
 
     init {
         viewModelScope.launch {
-            val movieItems =
-                movieRepository.getPopularMoviesFroOnlineApi("5dd5f72a8582886decaf7c52f0ad6080")
-            moviesFromApi = movieItems
+            try {
+                moviesFromApi =
+                    movieRepository.getPopularMoviesFroOnlineApi("5dd5f72a8582886decaf7c52f0ad6080")
+                movies = moviesFromApi
+            } catch (e: Exception) {
+                // Fetch data from ROOM DB
+            }
         }
     }
 }
