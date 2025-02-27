@@ -6,13 +6,13 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.movieapplication.repository.MovieRepository
-import com.example.movieapplication.retrofit.response.MovieItem
+import com.example.movieapplication.retrofit.response.Movie
 import kotlinx.coroutines.launch
 
 class MovieViewModel(val movieRepository: MovieRepository) : ViewModel() {
-    var moviesFromApi by mutableStateOf<List<MovieItem>>(emptyList())
+    var moviesFromApi by mutableStateOf<List<Movie>>(emptyList())
         private set
-    var movies by mutableStateOf<List<MovieItem>>(emptyList())
+    var movies by mutableStateOf<List<Movie>>(emptyList())
         private set
 
     init {
