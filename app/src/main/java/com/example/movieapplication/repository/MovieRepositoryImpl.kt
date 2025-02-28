@@ -4,8 +4,12 @@ import com.example.movieapplication.BuildConfig
 import com.example.movieapplication.retrofit.ApiService
 import com.example.movieapplication.retrofit.response.Movie
 import com.example.movieapplication.room.MovieDao
+import javax.inject.Inject
 
-class MovieRepositoryImpl(private val movieDao: MovieDao, private val apiService: ApiService) :
+class MovieRepositoryImpl @Inject constructor(
+    private val movieDao: MovieDao,
+    private val apiService: ApiService
+) :
     MovieRepository {
     override suspend fun getPopularMoviesFroOnlineApi(apiKey: String): List<Movie> {
         return apiService.getPopularMovies(BuildConfig.API_KEY).results

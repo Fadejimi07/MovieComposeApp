@@ -102,6 +102,12 @@ dependencies {
     kapt(libs.hilt.android.compiler)
     implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.androidx.navigation.compose)
+
+    // compose test dependency
+    // Test rules and transitive dependencies:
+    androidTestImplementation(libs.ui.test.junit4)
+    // Needed for createComposeRule(), but not for createAndroidComposeRule<YourActivity>():
+    debugImplementation(libs.ui.test.manifest)
 }
 
 // Allow references to generated code
