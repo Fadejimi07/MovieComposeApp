@@ -108,6 +108,11 @@ dependencies {
     androidTestImplementation(libs.ui.test.junit4)
     // Needed for createComposeRule(), but not for createAndroidComposeRule<YourActivity>():
     debugImplementation(libs.ui.test.manifest)
+
+    // For Robolectric tests.
+    testImplementation(libs.hilt.android.testing)
+    // ...with Kotlin.
+    kaptTest(libs.hilt.android.compiler)
 }
 
 // Allow references to generated code
