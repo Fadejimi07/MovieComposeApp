@@ -7,10 +7,11 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.movieapplication.viewmodel.MovieViewModel
 
 @Composable
-fun MovieList(viewModel: MovieViewModel, modifier: Modifier) {
+fun MovieList(viewModel: MovieViewModel = hiltViewModel(), modifier: Modifier) {
     val movies = viewModel.movies
 
     LazyColumn(

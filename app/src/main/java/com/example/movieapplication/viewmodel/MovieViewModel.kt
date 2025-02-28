@@ -8,9 +8,12 @@ import androidx.lifecycle.viewModelScope
 import com.example.movieapplication.BuildConfig
 import com.example.movieapplication.repository.MovieRepository
 import com.example.movieapplication.retrofit.response.Movie
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class MovieViewModel(val movieRepository: MovieRepository) : ViewModel() {
+@HiltViewModel
+class MovieViewModel @Inject constructor(val movieRepository: MovieRepository) : ViewModel() {
     var moviesFromApi by mutableStateOf<List<Movie>>(emptyList())
         private set
     var movies by mutableStateOf<List<Movie>>(emptyList())
